@@ -5,17 +5,29 @@
         <title>Multiple</title>
         <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8" />
         <meta http-equiv="Title" content="Watch Wyoscan" />
-<!--    <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/> -->
-        <meta name="viewport" content="width=200;" /> 
+        <!-- <meta name="viewport" content="width=200;" /> --> 
+	<!-- <meta name="viewport" content="user-scalable=no, width=device-width" /> -->
+	<meta name="viewport" content="user-scalable=no, width=200" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-icon" href="_Resources/apple-touch-icon.png" />
 <!--    <link rel="apple-touch-icon" href="bookmark-icon.png" /> -->
 <!--    <link rel="stylesheet" type="text/css" media="all" href="GLOBAL/global.css" /> -->
 <!--    <script type="text/javascript" src="GLOBAL/global.js"></script> -->
         <script src="_Processing/processing-1.4.1.min.js"></script>
+
+<script>
+ 
+function BlockMove(event) {
+  
+	event.preventDefault() ;
+}
+
+</script>
+
 </head>
 
-<body style="background-color:#FFF; margin:0px;">
+<body style="background-color:#FFF; margin:0px;" ontouchmove="BlockMove(event);">
 
 	<br />
 	<br />
