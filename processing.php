@@ -2,12 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-        <title>oO</title>
+        <title>Multiple</title>
         <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8" />
         <meta http-equiv="Title" content="Watch Wyoscan" />
 <!--    <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/> -->
-        <meta name="viewport" content="width=630; user-scalable=0;"/>
-<!--    <meta name="viewport" content="width=200;" /> -->
+        <meta name="viewport" content="width=200;" /> 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <!--    <link rel="apple-touch-icon" href="bookmark-icon.png" /> -->
@@ -18,6 +17,8 @@
 
 <body style="background-color:#FFF; margin:0px;">
 
+	<br />
+	<br />
         <canvas datasrc='_Processing/Multiple.pde'></canvas>
 
 </body>
