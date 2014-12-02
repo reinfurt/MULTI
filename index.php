@@ -20,7 +20,7 @@
  
 function BlockMove(event) {
   
-	event.preventDefault() ;
+	event.preventDefault();
 }
 
 </script>
