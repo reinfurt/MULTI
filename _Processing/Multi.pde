@@ -107,10 +107,10 @@ if (!paused) {
     //Disc newDisc = new Disc( x, y );
     //mouseTrail.add( newDisc );
 
-fill(map(y,0,height,0,255));
 
-if (x >= width-100) {
+if (x >= (width - width/4)) {
 thisFrameRate = (int)map(y, 0, height, 1, 10);
+// fill(map(y,0,height,0,255));
 }
 
   } 
