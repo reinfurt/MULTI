@@ -36,7 +36,7 @@ String[] mouth = {
 
 
 void setup() {
-  size(200, 600);
+  size(200, 355);
   // frameRate(thisFrameRate);
   frameRate(30);
   background(backgroundColor);
