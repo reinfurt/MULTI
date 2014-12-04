@@ -28,7 +28,8 @@ function BlockMove(event) {
 
 </head>
 
-<body style="background-color:#FFF; margin:0px;" ontouchmove="BlockMove(event);">
+<!-- <body style="background-color:#FFF; margin:0px;" ontouchmove="BlockMove(event);"> -->
+<body style="background-color:#FFF; margin:0px;">
 
 	<br />
 	<br />
