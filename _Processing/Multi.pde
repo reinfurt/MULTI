@@ -94,8 +94,7 @@ void mouseDragged() {
 
 
 
-// void touchStart(TouchEvent touchEvent) {
-void touchEnd(TouchEvent touchEvent) {
+void touchStart(TouchEvent touchEvent) {
   
 	useMultiTouch = true;
 	paused = !paused;
