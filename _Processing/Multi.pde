@@ -11,6 +11,7 @@ PFont displayFont;
 
 boolean paused = false;
 boolean useMultiTouch = false;
+boolean thisFrameRateAdjust = false;
 
 color backgroundColor = color(255);
 color fillColor = color(0);
@@ -66,6 +67,14 @@ void draw() {
     text(mouth[(int)random(mouth.length)], width/2, height/2+offset*1.5);
     // click.play();
     // click.rewind();
+
+
+if (thisFrameRateAdjust) {
+
+	line(0,0,100,100);
+}
+
+
   }
 counter++;
 }
@@ -84,7 +93,8 @@ void mouseDragged() {
 
 
 
-void touchStart(TouchEvent touchEvent) {
+// void touchStart(TouchEvent touchEvent) {
+void touchEnd(TouchEvent touchEvent) {
   
 	useMultiTouch = true;
 	paused = !paused;
@@ -97,20 +107,28 @@ void touchMove(TouchEvent touchEvent) {
 
 	if (!paused) {
 
-		for (int i = 10; i < touchEvent.touches.length; i++) {
+		for (int i = 0; i < touchEvent.touches.length; i++) {
 
-			int x = touchEvent.touches[i].offsetX;
+			// int x = touchEvent.touches[i].offsetX;
 			int y = touchEvent.touches[i].offsetY;
 
 			//if (x >= (width - width/4)) {
  
+
 				thisFrameRate = (int)map(y, 0, height, 1, 10);
+				// thisFrameRate = (int)map(y, 0, (height/2-y), 1, 10);
+				// thisFrameRateAdjust = (int)map(y, 0, height, 1, 10);
+
+				// increment framerate based on how much drag
+
+				thisFrameRateAdjust = true;
+
 			//}
 		} 
 	}
 }
 
-
+/*
 void keyPressed() {
   switch (key) {
   case '=':   // speed up
@@ -130,4 +148,5 @@ void keyPressed() {
     break;
   }
 }
+*/
 
