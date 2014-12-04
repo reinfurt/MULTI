@@ -101,14 +101,18 @@ void touchMove(TouchEvent touchEvent) {
 if (!paused) {
 
   for (int i = 0; i < touchEvent.touches.length; i++) {
-    // int x = touchEvent.touches[i].offsetX;
+    int x = touchEvent.touches[i].offsetX;
     int y = touchEvent.touches[i].offsetY;
     
     //Disc newDisc = new Disc( x, y );
     //mouseTrail.add( newDisc );
 
 fill(map(y,0,height,0,255));
+
+if (x >= width-100) {
 thisFrameRate = (int)map(y, 0, height, 1, 10);
+}
+
   } 
 }
 }
