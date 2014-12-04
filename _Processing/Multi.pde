@@ -85,6 +85,20 @@ void mouseDragged() {
 }
 
 
+void touchMove(TouchEvent touchEvent) {
+
+  // useMultiTouch = true;
+  for (int i = 0; i < touchEvent.touches.length; i++) {
+    int x = touchEvent.touches[i].offsetX;
+    int y = touchEvent.touches[i].offsetY;
+    
+    //Disc newDisc = new Disc( x, y );
+    //mouseTrail.add( newDisc );
+  }
+
+  fill(map(y,0,height,0,255));
+}
+
 
 void keyPressed() {
   switch (key) {
