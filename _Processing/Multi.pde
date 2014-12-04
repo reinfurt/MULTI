@@ -6,8 +6,8 @@
 
 // import ddf.minim.*;
 
-Minim minim;
-AudioPlayer click;
+// Minim minim;
+// AudioPlayer click;
 
 PFont displayFont;
 
@@ -38,12 +38,13 @@ String[] mouth = {
 
 void setup() {
   size(200, 200);
-  frameRate(thisFrameRate);
+  // frameRate(thisFrameRate);
+  frameRate(20);
   background(backgroundColor);
   stroke(strokeColor);
   smooth();
-  minim = new Minim(this);
-  click = minim.loadFile( "_Processing/data/BD.mp3", 256);  // default buffer is 1024, workable is 512 
+  // minim = new Minim(this);
+  // click = minim.loadFile( "_Processing/data/BD.mp3", 256);  // default buffer is 1024, workable is 512 
   // click = minim.loadSample( "Clave-808.aif", 256);  // default buffer is 1024, workable is 512
   // click = minim.loadFile( "_Processing/data/Clave-808.aif", 256);  // default buffer is 1024, workable is 512
   // click = minim.loadFile( "_Processing/data/SD.wav", 256);  // default buffer is 1024, workable is 512
@@ -58,7 +59,8 @@ void setup() {
 
 void draw() {
 
-  if (!paused && (counter % thisFrameRate == 0) ) { 
+  // if (!paused && (counter % thisFrameRate == 0) ) { 
+  if (!paused) { 
     background(backgroundColor);
     // click.trigger();
    //click.pause();
@@ -78,7 +80,7 @@ void mousePressed() {
 }
 
 void mouseDragged() {
-  thisFrameRate = (int)map(mouseY, 0, height, 1, 10);
+  // thisFrameRate = (int)map(mouseY, 0, height, 1, 10);
   // frameRate(thisFrameRate);
 }
 
