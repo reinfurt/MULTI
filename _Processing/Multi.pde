@@ -16,7 +16,7 @@ int thisFrameRateAdjust = 0;
 
 color backgroundColor = color(255);
 color fillColor = color(0);
-color strokeColor = color(50);
+color strokeColor = color(100);
 
 int thisSize = 200; // [200]
 int thisFrameRate = 20;
@@ -72,7 +72,8 @@ void draw() {
 
 if (thisFrameRateAdjust != 0) {
 
-	line(width-10,thisFrameRateAdjust,width,thisFrameRateAdjust);
+	line(width-20,thisFrameRateAdjust,width,thisFrameRateAdjust);
+	thisFrameRateAdjust = 0;
 }
 
 
@@ -98,6 +99,7 @@ void touchStart(TouchEvent touchEvent) {
   
 	useMultiTouch = true;
 	paused = !paused;
+	// thisFrameRateAdjust = 0;
 }
 
 
@@ -105,7 +107,7 @@ void touchMove(TouchEvent touchEvent) {
 
 	useMultiTouch = true;
 
-	if (!paused) {
+	// if (!paused) {
 
 		for (int i = 0; i < touchEvent.touches.length; i++) {
 
@@ -118,10 +120,12 @@ void touchMove(TouchEvent touchEvent) {
 				thisFrameRateAdjust = y;
 			//}
 		} 
+	/*
 	} else {
 
 		thisFrameRateAdjust = 0;
 	}
+	*/
 }
 
 /*
