@@ -96,9 +96,11 @@ void touchMove(TouchEvent touchEvent) {
   useMultiTouch = true;
 
 // only adjust if currently moving
+// only adjust if on the right side ??
 
 if (!paused) {
 
+/*
   for (int i = 0; i < touchEvent.touches.length; i++) {
     int x = touchEvent.touches[i].offsetX;
     int y = touchEvent.touches[i].offsetY;
@@ -106,6 +108,8 @@ if (!paused) {
     //Disc newDisc = new Disc( x, y );
     //mouseTrail.add( newDisc );
   }
+*/
+    int y = touchEvent.offsetY;
  
 fill(map(y,0,height,0,255));
 thisFrameRate = (int)map(y, 0, height, 1, 10);
