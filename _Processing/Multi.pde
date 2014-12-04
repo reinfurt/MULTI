@@ -75,6 +75,7 @@ counter++;
 
 
 
+/*
 void mousePressed() {
    paused = !paused;
 }
@@ -83,7 +84,7 @@ void mouseDragged() {
   // thisFrameRate = (int)map(mouseY, 0, height, 1, 10);
   // frameRate(thisFrameRate);
 }
-
+*/
 
 void touchMove(TouchEvent touchEvent) {
 
@@ -98,8 +99,9 @@ void touchMove(TouchEvent touchEvent) {
   }
 */
 //  fill(map(y,0,height,0,255));
+   paused = !paused;
  
-fill(200);
+//fill(200);
 
 }
 
