@@ -72,7 +72,7 @@ void draw() {
 
 if (thisFrameRateAdjust != 0) {
 
-	line(width-20,thisFrameRateAdjust,width,thisFrameRateAdjust);
+	line(width-width/4,thisFrameRateAdjust,width,thisFrameRateAdjust);
 	thisFrameRateAdjust = 0;
 }
 
@@ -111,14 +111,14 @@ void touchMove(TouchEvent touchEvent) {
 
 		for (int i = 0; i < touchEvent.touches.length; i++) {
 
-			// int x = touchEvent.touches[i].offsetX;
+			int x = touchEvent.touches[i].offsetX;
 			int y = touchEvent.touches[i].offsetY;
 
-			//if (x >= (width - width/4)) {
+			if (x >= (width - width/4)) {
  
 				thisFrameRate = (int)map(y, 0, height, 1, 10);
 				thisFrameRateAdjust = y;
-			//}
+			}
 		} 
 	/*
 	} else {
