@@ -36,9 +36,9 @@ String[] mouth = {
 
 
 void setup() {
-  size(200, 200);
+  size(200, 600);
   // frameRate(thisFrameRate);
-  frameRate(20);
+  frameRate(30);
   background(backgroundColor);
   stroke(strokeColor);
   smooth();
@@ -68,7 +68,7 @@ void draw() {
     text(mouth[(int)random(mouth.length)], width/2, height/2+offset*1.5);
     // click.play();
     // click.rewind();
-
+  }
 
 if (thisFrameRateAdjust != 0) {
 
@@ -76,8 +76,6 @@ if (thisFrameRateAdjust != 0) {
 	// thisFrameRateAdjust = 0;
 }
 
-
-  }
 counter++;
 }
 

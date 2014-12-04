@@ -27,15 +27,22 @@ function BlockMove(event) {
 
 </script>
 
+<style type="text/css">
+<!—-
+    * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+    }
+-->
+</style>
+
+
 </head>
 
 <!-- <body style="background-color:#FFF; margin:0px;" ontouchmove="BlockMove(event);"> -->
 
 <body style="background-color:#FFF; margin:0px;" ontouchmove="BlockMove(event);">
 
-	<br />
-	<br />
-	<br />
         <canvas datasrc='_Processing/Multi.pde'></canvas>
 
 </body>
