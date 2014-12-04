@@ -12,7 +12,7 @@ PFont displayFont;
 boolean paused = false;
 boolean useMultiTouch = false;
 
-int thisframeRateAdjust = 0;
+int thisFrameRateAdjust = 0;
 
 color backgroundColor = color(255);
 color fillColor = color(0);
