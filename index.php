@@ -15,6 +15,7 @@
 <!--    <link rel="stylesheet" type="text/css" media="all" href="GLOBAL/global.css" /> -->
 <!--    <script type="text/javascript" src="GLOBAL/global.js"></script> -->
         <script src="_Processing/processing.min.js"></script>
+        <script src="_Resources/minim.js"></script>
 
 <script>
  
@@ -32,7 +33,7 @@ function BlockMove(event) {
 	<br />
 	<br />
 	<br />
-        <canvas datasrc='_Processing/Multiple.pde'></canvas>
+        <canvas datasrc='_Processing/Multi.pde'></canvas>
 
 </body>
 </html>
