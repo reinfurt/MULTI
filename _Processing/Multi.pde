@@ -96,7 +96,10 @@ void touchMove(TouchEvent touchEvent) {
     //mouseTrail.add( newDisc );
   }
 
-  fill(map(y,0,height,0,255));
+//  fill(map(y,0,height,0,255));
+ 
+fill(200);
+
 }
 
 
