@@ -82,15 +82,22 @@ void mouseDragged() {
 }
 */
 
-void touchStart(TouchEvent touchEvent) {
 
-paused = !paused;
+
+void touchStart(TouchEvent touchEvent) {
+  
+	useMultiTouch = true;
+	paused = !paused;
 }
 
 
 void touchMove(TouchEvent touchEvent) {
 
   useMultiTouch = true;
+
+// only adjust if currently moving
+
+if (!paused) {
 
   for (int i = 0; i < touchEvent.touches.length; i++) {
     int x = touchEvent.touches[i].offsetX;
@@ -102,10 +109,7 @@ void touchMove(TouchEvent touchEvent) {
  
 fill(map(y,0,height,0,255));
 thisFrameRate = (int)map(y, 0, height, 1, 10);
-
- 
-// fill(200);
-
+}
 }
 
 
