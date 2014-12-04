@@ -96,9 +96,9 @@ void touchMove(TouchEvent touchEvent) {
   }
 */
 //  fill(map(y,0,height,0,255));
-   paused = !paused;
+//   paused = !paused;
  
-//fill(200);
+fill(y);
 
 }
 
