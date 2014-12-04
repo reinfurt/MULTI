@@ -96,7 +96,7 @@ void touchMove(TouchEvent touchEvent) {
   }
  
 fill(map(y,0,height,0,255));
-thisFrameRate = (int)map(mouseY, 0, height, 1, 10);
+thisFrameRate = (int)map(y, 0, height, 1, 10);
 
 //   paused = !paused;
  
