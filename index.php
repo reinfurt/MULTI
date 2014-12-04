@@ -14,7 +14,8 @@
 <!--    <link rel="apple-touch-icon" href="bookmark-icon.png" /> -->
 <!--    <link rel="stylesheet" type="text/css" media="all" href="GLOBAL/global.css" /> -->
 <!--    <script type="text/javascript" src="GLOBAL/global.js"></script> -->
-        <script src="_Processing/processing.min.js"></script>
+        <!-- <script src="_Processing/processing.min.js"></script> -->
+        <script src="_Processing/processing-1.3.6.js"></script>
         <script src="_Resources/minim.js"></script>
 
 <script>

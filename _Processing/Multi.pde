@@ -1,8 +1,6 @@
 // O-R-G 
-//
-// based on Gestalt
-// based on CJoA.pde
-// based on Boetti clock
+// for ART PAPERS
+// 12 / 2014
 
 // import ddf.minim.*;
 
@@ -11,16 +9,15 @@
 
 PFont displayFont;
 
-boolean drawText = false;
 boolean paused = false;
-boolean trails = false;
+boolean useMultiTouch = false;
 
 color backgroundColor = color(255);
 color fillColor = color(0);
 color strokeColor = color(255);
 
 int thisSize = 200; // [200]
-int thisFrameRate = 100;
+int thisFrameRate = 20;
 int offset = 25;
 int counter = 0;  // for iterating animation
 
@@ -88,7 +85,7 @@ void mouseDragged() {
 
 void touchMove(TouchEvent touchEvent) {
 
-  // useMultiTouch = true;
+  useMultiTouch = true;
 /*
   for (int i = 0; i < touchEvent.touches.length; i++) {
     int x = touchEvent.touches[i].offsetX;
