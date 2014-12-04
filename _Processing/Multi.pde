@@ -116,7 +116,7 @@ void touchMove(TouchEvent touchEvent) {
 
 	useMultiTouch = true;
 
-	// if (!paused) {
+	if (!paused) {
 
 		for (int i = 0; i < touchEvent.touches.length; i++) {
 
@@ -129,12 +129,11 @@ void touchMove(TouchEvent touchEvent) {
 				thisFrameRateAdjust = y;
 			}
 		} 
-	/*
+	
 	} else {
 
 		thisFrameRateAdjust = 0;
 	}
-	*/
 }
 
 /*

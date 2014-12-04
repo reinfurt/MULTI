@@ -31,7 +31,7 @@ function BlockMove(event) {
 <!—-
     * {
         -webkit-touch-callout: none;
-        -webkit-user-select: none;
+        /* -webkit-user-select: none; */
     }
 -->
 </style>
