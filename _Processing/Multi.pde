@@ -11,11 +11,12 @@ PFont displayFont;
 
 boolean paused = false;
 boolean useMultiTouch = false;
-boolean thisFrameRateAdjust = false;
+
+int thisframeRateAdjust = false;
 
 color backgroundColor = color(255);
 color fillColor = color(0);
-color strokeColor = color(255);
+color strokeColor = color(50);
 
 int thisSize = 200; // [200]
 int thisFrameRate = 20;
@@ -69,9 +70,9 @@ void draw() {
     // click.rewind();
 
 
-if (thisFrameRateAdjust) {
+if (thisFrameRateAdjust != 0) {
 
-	line(0,0,100,100);
+	line(width-10,thisFrameRateAdjust,width,thisFrameRateAdjust);
 }
 
 
@@ -114,17 +115,13 @@ void touchMove(TouchEvent touchEvent) {
 
 			//if (x >= (width - width/4)) {
  
-
 				thisFrameRate = (int)map(y, 0, height, 1, 10);
-				// thisFrameRate = (int)map(y, 0, (height/2-y), 1, 10);
-				// thisFrameRateAdjust = (int)map(y, 0, height, 1, 10);
-
-				// increment framerate based on how much drag
-
-				thisFrameRateAdjust = true;
-
+				thisFrameRateAdjust = y;
 			//}
 		} 
+	} else {
+
+		thisFrameRateAdjust = 0;
 	}
 }
 
