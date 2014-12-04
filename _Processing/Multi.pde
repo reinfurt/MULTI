@@ -56,8 +56,8 @@ void setup() {
 
 void draw() {
 
-  // if (!paused && (counter % thisFrameRate == 0) ) { 
-  if (!paused) { 
+  if (!paused && (counter % thisFrameRate == 0) ) { 
+  // if (!paused) { 
     background(backgroundColor);
     // click.trigger();
    //click.pause();
@@ -94,7 +94,10 @@ void touchMove(TouchEvent touchEvent) {
     //Disc newDisc = new Disc( x, y );
     //mouseTrail.add( newDisc );
   }
- fill(map(y,0,height,0,255));
+ 
+fill(map(y,0,height,0,255));
+thisFrameRate = (int)map(mouseY, 0, height, 1, 10);
+
 //   paused = !paused;
  
 // fill(200);
