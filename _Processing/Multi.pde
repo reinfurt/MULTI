@@ -46,6 +46,7 @@ void setup() {
   click = minim.loadFile( "_Processing/data/BD.mp3", 256);  // default buffer is 1024, workable is 512 
   // click = minim.loadSample( "Clave-808.aif", 256);  // default buffer is 1024, workable is 512
   // click = minim.loadFile( "_Processing/data/Clave-808.aif", 256);  // default buffer is 1024, workable is 512
+  // click = minim.loadFile( "_Processing/data/SD.wav", 256);  // default buffer is 1024, workable is 512
   displayFont = loadFont("AndaleMono-48.vlw");
   textFont(displayFont, 1.2);
   textAlign(CENTER);
@@ -60,10 +61,12 @@ void draw() {
   if (!paused) { 
     background(backgroundColor);
     // click.trigger();
-    click.play(0);
+   //click.pause();
     text(eye[(int)random(eye.length)], width/2-offset, height/2-.5*offset);
     text(eye[(int)random(eye.length)], width/2+offset, height/2-.5*offset);
     text(mouth[(int)random(mouth.length)], width/2, height/2+offset*1.5);
+    click.play();
+   click.rewind();
   }
 }
 

@@ -24,6 +24,8 @@ function AudioPlayer(str) {
     }, false);
     audio.preload = 'auto';
     audio.autobuffer = true;
+
+	// chopped out .ogg functionality
     /*
 if (canPlayOgg()) {
       audio.src = str.split(".")[0] + ".ogg";
