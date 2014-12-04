@@ -20,7 +20,7 @@ color fillColor = color(0);
 color strokeColor = color(255);
 
 int thisSize = 200; // [200]
-int thisFrameRate = 10;
+int thisFrameRate = 100;
 int offset = 25;
 int counter = 0;  // for iterating animation
 
@@ -58,27 +58,28 @@ void setup() {
 
 void draw() {
 
-  if (!paused) { 
+  if (!paused && (counter % thisFrameRate == 0) ) { 
     background(backgroundColor);
     // click.trigger();
    //click.pause();
     text(eye[(int)random(eye.length)], width/2-offset, height/2-.5*offset);
     text(eye[(int)random(eye.length)], width/2+offset, height/2-.5*offset);
     text(mouth[(int)random(mouth.length)], width/2, height/2+offset*1.5);
-    click.play();
-   click.rewind();
+    // click.play();
+    // click.rewind();
   }
+counter++;
 }
 
 
 
 void mousePressed() {
-  paused = !paused;
+   paused = !paused;
 }
 
 void mouseDragged() {
-  thisFrameRate = (int)map(mouseY, 0, height, 60, 1);
-  frameRate(thisFrameRate);
+  thisFrameRate = (int)map(mouseY, 0, height, 1, 10);
+  // frameRate(thisFrameRate);
 }
 
 
