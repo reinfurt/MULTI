@@ -70,18 +70,6 @@ void draw() {
 }
 
 
-/*
-void mousePressed() {
-   paused = !paused;
-}
-
-void mouseDragged() {
-  // thisFrameRate = (int)map(mouseY, 0, height, 1, 10);
-  // frameRate(thisFrameRate);
-}
-*/
-
-
 
 void touchStart(TouchEvent touchEvent) {
   
@@ -124,6 +112,17 @@ void touchMove(TouchEvent touchEvent) {
 	} 
 }
 
+
+/*
+void mousePressed() {
+   paused = !paused;
+}
+
+void mouseDragged() {
+  // thisFrameRate = (int)map(mouseY, 0, height, 1, 10);
+  // frameRate(thisFrameRate);
+}
+
 void keyPressed() {
   switch (key) {
   case '=':   // speed up
@@ -143,4 +142,4 @@ void keyPressed() {
     break;
   }
 }
-
+*/
