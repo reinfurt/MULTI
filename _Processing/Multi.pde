@@ -33,7 +33,8 @@ void setup() {
   stroke(strokeColor);
   smooth();
   // minim = new Minim(this);
-  // click = minim.loadFile( "_Processing/data/BD.mp3", 256);  // default buffer is 1024, workable is 512 
+  // click = minim.loadFile( "_Processing/data/BD-short.wav", 256);  // default buffer is 1024, workable is 512 
+  // clock = minim.loadFile( "_Processing/data/BD-short.wav", 256);  // default buffer is 1024, workable is 512 
   // click = minim.loadSample( "Clave-808.aif", 256);  // default buffer is 1024, workable is 512
   // click = minim.loadFile( "_Processing/data/Clave-808.aif", 256);  // default buffer is 1024, workable is 512
   // click = minim.loadFile( "_Processing/data/SD.wav", 256);  // default buffer is 1024, workable is 512
@@ -53,8 +54,10 @@ void draw() {
     background(backgroundColor);
     // click.trigger();
     // click.pause();
-    // click.play();
     // click.rewind();
+    // click.play();
+    // clock.play();
+    // clock.rewind();
     text(eye[(int)random(eye.length)], width/2-offset, height/2-.5*offset-height/20);
     text(eye[(int)random(eye.length)], width/2+offset, height/2-.5*offset-height/20);
     text(mouth[(int)random(mouth.length)], width/2, height/2+offset*1.5-height/20);
@@ -90,38 +93,64 @@ void touchStart(TouchEvent touchEvent) {
 }
 
 
+
 void touchMove(TouchEvent touchEvent) {
 
 	useMultiTouch = true;
 
 	if (!paused) {
 
-		for (int i = 0; i < touchEvent.touches.length; i++) {
-
-			int x = touchEvent.touches[i].offsetX;
-			int y = touchEvent.touches[i].offsetY;
-
-			if (x >= (width - 10)) {
- 
-				thisFrameRate = (int)map(y, 0, height, 1, 30);
-				thisFrameRateAdjust = y;
-				thisFrameRateAdjustDisplay = 0;
-			}
-		} 
-	
+                for (int i = 0; i < touchEvent.touches.length; i++) {
+    
+                        int x = touchEvent.touches[i].offsetX;
+                        int y = touchEvent.touches[i].offsetY;
+    
+                        if (x >= (width - 10)) {
+   
+                                thisFrameRate = (int)map(y, 0, height, 1, 30);
+                                thisFrameRateAdjust = y;
+                                thisFrameRateAdjustDisplay = 0;
+                        }
+                }
 	} 
 }
 
 
-/*
+
 void mousePressed() {
-   paused = !paused;
+
+	if (!useMultiTouch) {
+
+		int x = mouseX;
+		int y = mouseY;
+
+		if (x < (width - 10)) {
+
+			paused = !paused;
+			thisFrameRateAdjust = 0;
+		}
+	}
 }
 
+
+
 void mouseDragged() {
-  // thisFrameRate = (int)map(mouseY, 0, height, 1, 10);
-  // frameRate(thisFrameRate);
+
+	if (!useMultiTouch && !paused) {
+
+                int x = mouseX;
+                int y = mouseY;
+
+		if (x >= (width - 10)) {
+
+ 			thisFrameRate = (int)map(y, 0, height, 1, 30);
+			thisFrameRateAdjust = y;
+			thisFrameRateAdjustDisplay = 0;
+                }	
+	}
 }
+
+
 
 void keyPressed() {
   switch (key) {
@@ -142,4 +171,3 @@ void keyPressed() {
     break;
   }
 }
-*/
