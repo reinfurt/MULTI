@@ -1,10 +1,6 @@
 // O-R-G 
 // for ART PAPERS
-// 12 / 2014
-
-// import ddf.minim.*;
-// Minim minim;
-// AudioPlayer click;
+// 12 / xx / 2014
 
 PFont displayFont;
 
@@ -19,6 +15,7 @@ int offset = 31; // [25]
 int counter = 0;  // for iterating animation
 int thisFrameRate = 10;
 int thisFrameRateAdjust = 0;
+int frameRateAdjustLineWidth = 30;
 
 String[] eye = {",", ".", "*", "+", "-", "—", ":", ";", "•", "°", "‘", "’"};
 String[] mouth = {"o", "+", "-", "+", "–", "/", "x", "=", "~", "_", "-", "_", "*"};
@@ -27,49 +24,44 @@ String[] mouth = {"o", "+", "-", "+", "–", "/", "x", "=", "~", "_", "-", "_", 
 
 void setup() {
 
-  size(200, 355);
-  frameRate(100);
-  background(backgroundColor);
-  stroke(strokeColor);
-  smooth();
-  // minim = new Minim(this);
-  // click = minim.loadFile( "_Processing/data/BD-short.wav", 256);  // default buffer is 1024, workable is 512 
-  // clock = minim.loadFile( "_Processing/data/BD-short.wav", 256);  // default buffer is 1024, workable is 512 
-  // click = minim.loadSample( "Clave-808.aif", 256);  // default buffer is 1024, workable is 512
-  // click = minim.loadFile( "_Processing/data/Clave-808.aif", 256);  // default buffer is 1024, workable is 512
-  // click = minim.loadFile( "_Processing/data/SD.wav", 256);  // default buffer is 1024, workable is 512
-  displayFont = loadFont("_Processing/data/AndaleMono-60.vlw");
-  textFont(displayFont);
-  textAlign(CENTER);
-  textSize(60);
-  fill(fillColor);
+	size(200, 355);
+	frameRate(100);
+	background(backgroundColor);
+	stroke(strokeColor);
+	smooth();
+	displayFont = loadFont("_Processing/data/AndaleMono-60.vlw");
+	textFont(displayFont);
+	textAlign(CENTER);
+	textSize(60);
+	fill(fillColor);
 }
 
 
 
 void draw() {
 
-  if (!paused && (counter % thisFrameRate == 0) ) { 
+	if (!paused && (counter % thisFrameRate == 0) ) { 
 
-    background(backgroundColor);
-    // click.trigger();
-    // click.pause();
-    // click.rewind();
-    // click.play();
-    // clock.play();
-    // clock.rewind();
-    text(eye[(int)random(eye.length)], width/2-offset, height/2-.5*offset-height/20);
-    text(eye[(int)random(eye.length)], width/2+offset, height/2-.5*offset-height/20);
-    text(mouth[(int)random(mouth.length)], width/2, height/2+offset*1.5-height/20);
-  }
+		background(backgroundColor);
+		text(eye[(int)random(eye.length)], width/2-offset, height/2-.5*offset-height/20);
+		text(eye[(int)random(eye.length)], width/2+offset, height/2-.5*offset-height/20);
+		text(mouth[(int)random(mouth.length)], width/2, height/2+offset*1.5-height/20);
+  	}
 
-  if ((thisFrameRateAdjust != 0) && (thisFrameRateAdjustDisplay < 20)) {
+	// frameRateAdjustDisplay
 
-    line(width-20,thisFrameRateAdjust,width,thisFrameRateAdjust); 
-    thisFrameRateAdjustDisplay++;
-  }
+	if ((thisFrameRateAdjust != 0) && (thisFrameRateAdjustDisplay < 20)) {
 
-  counter++;
+		fill(255);
+		stroke(255);
+		rect(width-frameRateAdjustLineWidth,0,width-frameRateAdjustLineWidth,height);
+		fill(0);
+		stroke(strokeColor);
+    		line(width-frameRateAdjustLineWidth,thisFrameRateAdjust,width,thisFrameRateAdjust); 
+		thisFrameRateAdjustDisplay++;
+	}
+
+	counter++;
 }
 
 
@@ -79,17 +71,16 @@ void touchStart(TouchEvent touchEvent) {
 	useMultiTouch = true;
 
 	for (int i = 0; i < touchEvent.touches.length; i++) {
-
+		
 		int x = touchEvent.touches[i].offsetX;
 		int y = touchEvent.touches[i].offsetY;
 
-		if (x < (width - 10)) {
-
+		if (x < (width - frameRateAdjustLineWidth)) {
+			
 			paused = !paused;
 			thisFrameRateAdjust = 0;
-		}
+		}	
 	}
-
 }
 
 
@@ -105,7 +96,7 @@ void touchMove(TouchEvent touchEvent) {
                         int x = touchEvent.touches[i].offsetX;
                         int y = touchEvent.touches[i].offsetY;
     
-                        if (x >= (width - 10)) {
+                        if (x >= (width - frameRateAdjustLineWidth)) {
    
                                 thisFrameRate = (int)map(y, 0, height, 1, 30);
                                 thisFrameRateAdjust = y;
@@ -124,7 +115,7 @@ void mousePressed() {
 		int x = mouseX;
 		int y = mouseY;
 
-		if (x < (width - 10)) {
+		if (x < (width - frameRateAdjustLineWidth)) {
 
 			paused = !paused;
 			thisFrameRateAdjust = 0;
@@ -141,7 +132,7 @@ void mouseDragged() {
                 int x = mouseX;
                 int y = mouseY;
 
-		if (x >= (width - 10)) {
+		if (x >= (width - frameRateAdjustLineWidth)) {
 
  			thisFrameRate = (int)map(y, 0, height, 1, 30);
 			thisFrameRateAdjust = y;
@@ -151,18 +142,17 @@ void mouseDragged() {
 }
 
 
-
+/*
 void keyPressed() {
+
   switch (key) {
   case '=':   // speed up
     thisFrameRate += 1;
-    // frameRate(thisFrameRate);
     break;
   case '-':   // slow down
     if (thisFrameRate > 1) { 
       thisFrameRate -= 1;
     }
-    // frameRate(thisFrameRate);
     break;
   case ' ':  // pause
     paused = !paused;
@@ -171,3 +161,4 @@ void keyPressed() {
     break;
   }
 }
+*/

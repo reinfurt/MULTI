@@ -32,6 +32,16 @@
 
 <body style="background-color:#CCC; margin:0px;" ontouchmove="BlockMove(event);">
 
-        <canvas datasrc='_Processing/Multi.pde'></canvas>
+	<script>
+
+	if (!window.navigator.standalone) {
+
+		// write a new layer with canvas or display message
+		alert("Add to Home Screen . . .");
+	}
+
+	</script>
+
+        <canvas datasrc='_Processing/Multi.pde'></canvas> 
 </body>
 </html>
