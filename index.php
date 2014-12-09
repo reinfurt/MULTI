@@ -32,16 +32,24 @@
 
 <body style="background-color:#CCC; margin:0px;" ontouchmove="BlockMove(event);">
 
+	<div id='Multi'></div>
+
 	<script>
 
-	if (!window.navigator.standalone) {
+		temp = document.getElementById('Multi');
+	
+ 		if (window.navigator.standalone) {
 
-		// write a new layer with canvas or display message
-		alert("Add to Home Screen . . .");
-	}
+			// fill in correct css to center message and show icon
+
+			temp.innerHTML = '<div style="font-family: Helvetica, sans-serif; font-size: 14px; width: 100px; padding:40px; background-color:#FFF;">Click below to install Multi, choose Add to home screen ...</div>';
+
+		} else {
+
+			temp.innerHTML = '<canvas datasrc="_Processing/Multi.pde"></canvas>';
+		}
 
 	</script>
 
-        <canvas datasrc='_Processing/Multi.pde'></canvas> 
 </body>
 </html>
