@@ -5,7 +5,15 @@
         <title>Multi</title>
         <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8" />
         <meta http-equiv="Title" content="Multi" />
-	<meta name="viewport" content="user-scalable=no, width=200" />
+
+	<!-- <meta name="viewport" content="user-scalable=no, width=200" /> -->
+
+	<!-- <meta name="viewport" content="width=400, initial-scale=10.0" /> -->
+
+	<!-- <meta name=viewport content="width=device-width, initial-scale=10.0"> -->
+
+	<meta name = "viewport" content = "user-scalable=no, width=device-width">
+
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<link rel="apple-touch-icon" href="_Resources/apple-touch-icon.png" />
@@ -26,6 +34,13 @@
         		-webkit-touch-callout: none;
 	        	/* -webkit-user-select: none; */
     			}
+
+/*
+// this is for mobile from Modern Art
+/* Mobile Styles */
+@media screen and (max-width: 568px) {
+}
+*/
 	-->
 	</style>
 </head>
@@ -42,7 +57,8 @@
 
 			// fill in correct css to center message and show icon
 
-			temp.innerHTML = '<div style="font-family: Helvetica, sans-serif; font-size: 14px; width: 100px; padding:40px; background-color:#FFF;">Click below to install Multi, choose Add to home screen ...</div>';
+			// temp.innerHTML = '<canvas datasrc="_Processing/Multi.pde"></canvas>';	
+			temp.innerHTML = '<div style="font-family: Helvetica, sans-serif; font-size: 14px; width: 688px; padding:40px; background-color:#FFF;">Click below to install Multi, choose Add to home screen ...</div>';
 
 		} else {
 
