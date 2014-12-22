@@ -4,18 +4,20 @@
 
 PFont displayFont;
 
+boolean dev = true;
 boolean paused = false;
 boolean useMultiTouch = false;
 
 color backgroundColor = color(255);
 color fillColor = color(0);
-color strokeColor = color(100);
+color strokeColor = color(0);
 
-int offset = 31; // [25]
 int counter = 0;  // for iterating animation
 int thisFrameRate = 10;
 int thisFrameRateAdjust = 0;
 int frameRateAdjustLineWidth = 30;
+int frameRateAdjustLineWeight = 1;
+int offset = 31; // [25] [31]
 
 String[] eye = {",", ".", "*", "+", "-", "—", ":", ";", "•", "°", "‘", "’"};
 String[] mouth = {"o", "+", "-", "+", "–", "/", "x", "=", "~", "_", "-", "_", "*"};
@@ -24,16 +26,32 @@ String[] mouth = {"o", "+", "-", "+", "–", "/", "x", "=", "~", "_", "-", "_", 
 
 void setup() {
 
-	size(200, 355);
+	if (!dev) {
+
+		size(768, 1363);
+		displayFont = loadFont("_Processing/data/AndaleMono-230.vlw");
+		textFont(displayFont);
+		textAlign(CENTER);
+		textSize(230);
+		frameRateAdjustLineWidth = 115;
+		frameRateAdjustLineWeight = 4;
+		offset = 119;
+	
+	} else {
+	
+		size(200, 355);
+		displayFont = loadFont("_Processing/data/AndaleMono-60.vlw");
+		textFont(displayFont);
+		textAlign(CENTER);
+		textSize(60);
+	}	
+
 	frameRate(100);
 	background(backgroundColor);
 	stroke(strokeColor);
 	smooth();
-	displayFont = loadFont("_Processing/data/AndaleMono-60.vlw");
-	textFont(displayFont);
-	textAlign(CENTER);
-	textSize(60);
 	fill(fillColor);
+	strokeWeight(frameRateAdjustLineWeight);
 }
 
 
@@ -142,18 +160,11 @@ void mouseDragged() {
 }
 
 
-/*
 void keyPressed() {
 
+if (dev) {
+
   switch (key) {
-  case '=':   // speed up
-    thisFrameRate += 1;
-    break;
-  case '-':   // slow down
-    if (thisFrameRate > 1) { 
-      thisFrameRate -= 1;
-    }
-    break;
   case ' ':  // pause
     paused = !paused;
     break;
@@ -161,4 +172,5 @@ void keyPressed() {
     break;
   }
 }
-*/
+
+}
