@@ -4,7 +4,7 @@
 
 PFont displayFont;
 
-boolean dev = true;
+boolean dev = false;
 boolean paused = false;
 boolean useMultiTouch = false;
 
@@ -27,6 +27,8 @@ String[] mouth = {"o", "+", "-", "+", "–", "/", "x", "=", "~", "_", "-", "_", 
 void setup() {
 
 	if (!dev) {
+
+		// max width should be 688px for iPad webapp?
 
 		size(768, 1363);
 		displayFont = loadFont("_Processing/data/AndaleMono-230.vlw");
