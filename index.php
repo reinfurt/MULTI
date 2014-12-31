@@ -10,8 +10,8 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<link rel="apple-touch-icon" href="_Resources/apple-touch-icon.png" />
-        <script src="_Processing/processing.min.js"></script>
-        <!-- <script src="_Processing/processing-1.3.6.js"></script> -->
+        <!-- <script src="_Processing/processing.min.js"></script> -->
+        <script src="_Processing/processing-1.3.6.js"></script>
         <!-- <script src="_Resources/minim.js"></script> -->
 
 	<script>
@@ -22,21 +22,29 @@
 	</script>
 
 	<style type="text/css">
-	<!—-
-    		* {
-        		-webkit-touch-callout: none;
-	        	/* -webkit-user-select: none; */
-    			}
-		
-		#addtohome {
-			font-family: Helvetica, sans-serif; 
-			font-size: 72px; 
-			width: 568px; 
-			height: 1163px;
-			padding: 100px; 
+	
+		.underline {
+        		border-bottom: solid 6px #000;
+		        text-decoration: none;
+			}
+
+		#addtohomeContainer {
+			position: absolute;
+			width: 768px;
+			height: 100%;
 			background-color:#FFF;
-		}
-	-->
+			}
+
+		#addtohome {
+			position:absolute;
+			top: 30%;
+			left: 15%;
+			width: 75%;
+			font-family: Helvetica, Arial, sans-serif; 
+			font-size: 64px;
+			line-height: 80px;
+			}
+
 	</style>
 </head>
 
@@ -50,11 +58,7 @@
 	
   		if (!window.navigator.standalone) {
 
-			// fill in correct css to center message and show icon
-
-			// temp.innerHTML = '<canvas datasrc="_Processing/Multi.pde"></canvas>';	
-			// temp.innerHTML = '<div style="font-family: Helvetica, sans-serif; font-size: 14px; width: 688px; padding:40px; background-color:#FFF;">Click below to install Multi, choose Add to home screen ...</div>';
-			temp.innerHTML = '<div id="addtohome">To install Multi, please click below and choose Add to home screen ... </div>';
+			temp.innerHTML = '<div id="addtohomeContainer"><div id="addtohome">To install <span class="underline">Multi</span>,<br/>click <img src="_Resources/install.gif"> below and then select <img src="_Resources/addtohome.gif"> “Add to Home Screen” from the menu . . .</div></div>';
 
 		} else {
 
