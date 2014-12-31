@@ -37,7 +37,7 @@
 
 		#addtohome {
 			position:absolute;
-			top: 30%;
+			top: 28%;
 			left: 15%;
 			width: 75%;
 			font-family: Helvetica, Arial, sans-serif; 
