@@ -1,17 +1,19 @@
 body { 
+	width:100%;
 	margin: 0px;
         color: #000;
         background-color: #FFF;
         font-family: Helvetica, Arial, sans-serif;
         font-size: 20px;
         line-height: 24px;
+	white-space:nowrap;
 	}
 
 a {
         color: #000;
         text-decoration: none;
-        border-bottom: solid 3px #000;
-        }
+        border-bottom: solid 2px #000;
+	}
 
 a:hover {
         border-bottom: solid 3px #FFF;
@@ -20,6 +22,11 @@ a:hover {
 a:active {
         color:#FFF;
         }
+	
+.caption {
+        font-size: 12px;
+        line-height: 16px;
+	}
 
 
 /* ids */
@@ -42,24 +49,18 @@ a:active {
 
 /* containers */
 
-.mainContainer {
-	position: absolute;
-	background-color:#FFF;
-	top: 10px;
-	left: 10px;
-	width: 95%;
-	padding:20px;
-	}
-
 .blockContainer {
         position:relative;
 	display: inline-block;
 	vertical-align:top;
 	width: 300px;
-	padding:20px;
+	padding: 20px;
+	white-space:initial;
 	}
 
 .imageContainer {
+	margin-left:-40px;
+	margin-top:-20px;
 	position:relative; 
 	}
 
@@ -69,10 +70,6 @@ a:active {
 
 
 /* utility */
-
-.pad {
-	padding:80px;  
-	}
 
 .centered {
 	margin-left: auto;
@@ -89,28 +86,18 @@ a:active {
 	}
 	
 	body {
-	        font-size: 64px;
-        	line-height: 80px;
+		width:768px;
+	        /*font-size: 64px;*/
+        	/*line-height: 80px;*/
 	}
 	
 	a {
-        	border-bottom: solid 6px #000;
+        	/*border-bottom: solid 6px #000;*/
         }
 
 	a:hover {
-        	border-bottom: solid 6px #FFF;
+        	/*border-bottom: solid 6px #FFF;*/
         }
-
-	img {	
-		width: 100%;
-		height: auto;
-		padding-top: 10px;
-	}
-	
-	img[src$=".gif"] {
-		height: 95%;
-		width: auto;
-	}
 
 
 	/* Containers */
