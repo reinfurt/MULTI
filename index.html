@@ -5,66 +5,37 @@
         <title>Multi</title>
         <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8" />
         <meta http-equiv="Title" content="Multi" />
-	<!-- <meta name="viewport" content="user-scalable=no, width=200" /> -->
-	<meta name = "viewport" content = "user-scalable=no, width=device-width">
+	<meta name="viewport" content="user-scalable=no, width=device-width">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<link rel="apple-touch-icon" href="_Resources/apple-touch-icon.png" />
-        <!-- <script src="_Resources/_Processing/processing.min.js"></script> -->
-        <script src="_Resources/_Processing/processing-1.3.6.js"></script>
-
-	<script>
-		function BlockMove(event) {
-  
-			event.preventDefault();
-		}
-	</script>
-
-	<style type="text/css">
-	
-		.underline {
-        		border-bottom: solid 6px #000;
-		        text-decoration: none;
-			}
-
-		#addtohomeContainer {
-			position: absolute;
-			width: 768px;
-			height: 100%;
-			background-color:#FFF;
-			}
-
-		#addtohome {
-			position:absolute;
-			top: 28%;
-			left: 15%;
-			width: 75%;
-			font-family: Helvetica, Arial, sans-serif; 
-			font-size: 64px;
-			line-height: 80px;
-			}
-
-	</style>
+        <link rel="stylesheet" type="text/css" media="all" href="_Resources/global.css" />
 </head>
 
-<body style="background-color:#CCC; margin:0px;" ontouchmove="BlockMove(event);">
+<body>
 
-	<div id='Multi'></div>
+	<div class='blockContainer'>
 
-	<script>
+<a href='install.html'>Multi</a> is a small software programmed by <a href='http://www.o-r-g.com' target='new'>O-R-G</a> and commissioned by ART PAPERS.
+<br/><br/>
+<img src="_Resources/apple-touch-icon.png">
 
-		temp = document.getElementById('Multi');
-	
-  		if (!window.navigator.standalone) {
+	</div>
 
-			temp.innerHTML += '<div id="addtohomeContainer"><div id="addtohome">To install <span class="underline">Multi</span>,<br/>click <img src="_Resources/install.gif"> below and then select <img src="_Resources/addtohome.gif"> “Add to Home Screen” from the menu . . .</div></div>';
+	<div class='blockContainer'>
 
-		} else {
+Italian designer Enzo Mari spent the year 1957 drawing an apple. The result, <a href="http://www.danesemilano.com/spaces/uno-la-mela/" target="new">La Mela</a>, is a large silkscreen print released as an artist multiple by Danese Milano continuously since. Mari lavished time on the drawing, preparing it for industrial manufacture by abolishing detail and reducing it to an essential form. He was not looking to draw AN apple, but rather THE apple — a perfect symbol designed for the serial logic of industrial reproduction. In place of the unique work of art and its privileged market, multiples used contemporary manufacturing to produce many exact copies circulated as consumer products.
 
-			temp.innerHTML = '<canvas datasrc="_Resources/_Processing/Multi.pde"></canvas>';
-		}
+	</div>
 
-	</script>
+	<div class='blockContainer'>
+
+<a href='install.html'>Multi</a> reconsiders this process 50 years later, as software coding has replaced the industrial assembly line. At any one moment, this software presents one of 1,728 possible arrangements, each a face built from minimal typographic furniture. Instead of many identical copies from one design, <a href='install.html'>Multi</a> is one original set of instructions constantly producing alternative versions.
+<br/><br/>
+Available now as a free download for OS X, iPhone, and iPad at http://www.artpapers.org/multi
+
+	</div>
+
 
 </body>
 </html>
