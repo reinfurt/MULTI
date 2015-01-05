@@ -4,20 +4,19 @@
 
 PFont displayFont;
 
-boolean dev = false;
 boolean paused = false;
 boolean useMultiTouch = false;
 
 color backgroundColor = color(255);
 color fillColor = color(0);
-color strokeColor = color(0);
 
 int counter = 0;  // for iterating animation
 int thisFrameRate = 10;
 int thisFrameRateAdjust = 0;
-int frameRateAdjustLineWidth = 30;
-int frameRateAdjustLineWeight = 1;
-int offset = 31; // [25] [31]
+int frameRateAdjustLineWidth = 115;
+int frameRateAdjustLineWeight = 4;
+int thisFrameRateAdjustDisplay = 0;
+int offset = 119; // [25] [31]
 
 String[] eye = {",", ".", "*", "+", "-", "—", ":", ";", "•", "°", "‘", "’"};
 String[] mouth = {"o", "+", "-", "+", "–", "/", "x", "=", "~", "_", "-", "_", "*"};
@@ -26,34 +25,18 @@ String[] mouth = {"o", "+", "-", "+", "–", "/", "x", "=", "~", "_", "-", "_", 
 
 void setup() {
 
-	if (!dev) {
-
-		// max width should be 688px for iPad webapp?
-
-		size(768, 1363);
-		displayFont = loadFont("_Processing/data/AndaleMono-230.vlw");
-		textFont(displayFont);
-		textAlign(CENTER);
-		textSize(230);
-		frameRateAdjustLineWidth = 115;
-		frameRateAdjustLineWeight = 4;
-		offset = 119;
-	
-	} else {
-	
-		size(200, 355);
-		displayFont = loadFont("_Processing/data/AndaleMono-60.vlw");
-		textFont(displayFont);
-		textAlign(CENTER);
-		textSize(60);
-	}	
-
+	size(768, 1363);
 	frameRate(100);
 	background(backgroundColor);
-	stroke(strokeColor);
-	smooth();
 	fill(fillColor);
+	stroke(strokeColor);
 	strokeWeight(frameRateAdjustLineWeight);
+	smooth();
+
+	displayFont = loadFont("_Processing/data/AndaleMono-230.vlw");
+	textFont(displayFont);
+	textAlign(CENTER);
+	textSize(230);
 }
 
 
@@ -159,20 +142,4 @@ void mouseDragged() {
 			thisFrameRateAdjustDisplay = 0;
                 }	
 	}
-}
-
-
-void keyPressed() {
-
-if (dev) {
-
-  switch (key) {
-  case ' ':  // pause
-    paused = !paused;
-    break;
-  default:
-    break;
-  }
-}
-
 }
