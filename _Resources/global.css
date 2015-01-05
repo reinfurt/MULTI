@@ -71,47 +71,47 @@ a:active {
 
 @media screen and (max-width: 768px) {
 	
-	html {
-	    	-webkit-tap-highlight-color: rgba(255,0,0,0.2);
+html {	    	
+	-webkit-tap-highlight-color: rgba(255,0,0,0.2);
 	}
 	
-	body {
-	        font-size: 40px;
-        	line-height: 48px;
-		width: 100%;
+body {
+	font-size: 22px;
+	line-height: 27px;
 	}
 	
-	a {
-        	/*border-bottom: solid 6px #000;*/
+a {
+	/*border-bottom: solid 6px #000;*/
         }
 
-	a:hover {
-        	/*border-bottom: solid 6px #FFF;*/
+a:hover {
+        /*border-bottom: solid 6px #FFF;*/
         }
 
-	img {	
-		width: 100%;
-		height: auto;
-		padding-top: 10px;
+img {	
+	width: 100%;
+	height: auto;
+	padding-top: 10px;
 	}
 
-	.icon {	
-		width: auto;
-		height: 28px;
+.icon {	
+	height:20px;
+	margin-top:-10px;
+	width: auto;
 	}
 
 
-	/* Containers */
+/* Containers */
 	
-	.blockContainer {
-		display: block;
-		width: 700px;
+.blockContainer {
+	display: block;
+	width: auto;
 	}
 
-	.imageContainer {
-		margin-left:0px;
-		margin-top:-20px;
-		position:relative; 
+.imageContainer {
+	margin-left:0px;
+	margin-top:-20px;
+	position:relative; 
 	}
 }
 
