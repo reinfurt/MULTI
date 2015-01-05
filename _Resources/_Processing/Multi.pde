@@ -1,6 +1,6 @@
 // O-R-G 
 // for ART PAPERS
-// 01 / 01 / 2015
+// 01 / 05 / 2015
 
 PFont displayFont;
 
@@ -9,13 +9,15 @@ boolean useMultiTouch = false;
 
 color backgroundColor = color(255);
 color fillColor = color(0);
+color strokeColor = color(0);
 
 int counter = 0;  // for iterating animation
 int thisFrameRate = 10;
 int thisFrameRateAdjust = 0;
+int thisFrameRateAdjustDisplay = 0;
+int thisFrameRateAdjustDisplayLimit = 20;
 int frameRateAdjustLineWidth = 115;
 int frameRateAdjustLineWeight = 4;
-int thisFrameRateAdjustDisplay = 0;
 int offset = 119; // [25] [31]
 
 String[] eye = {",", ".", "*", "+", "-", "—", ":", ";", "•", "°", "‘", "’"};
@@ -51,9 +53,7 @@ void draw() {
 		text(mouth[(int)random(mouth.length)], width/2, height/2+offset*1.5-height/20);
   	}
 
-	// frameRateAdjustDisplay
-
-	if ((thisFrameRateAdjust != 0) && (thisFrameRateAdjustDisplay < 20)) {
+	if ((thisFrameRateAdjust != 0) && (thisFrameRateAdjustDisplay < thisFrameRateAdjustDisplayLimit)) {
 
 		fill(255);
 		stroke(255);
@@ -82,6 +82,7 @@ void touchStart(TouchEvent touchEvent) {
 			
 			paused = !paused;
 			thisFrameRateAdjust = 0;
+			thisFrameRateAdjustDisplay = 0;
 		}	
 	}
 }
@@ -101,9 +102,9 @@ void touchMove(TouchEvent touchEvent) {
     
                         if (x >= (width - frameRateAdjustLineWidth)) {
    
-                                thisFrameRate = (int)map(y, 0, height, 1, 30);
+                                thisFrameRate = (int)map(y, 0, height, 1, 20);
                                 thisFrameRateAdjust = y;
-                                thisFrameRateAdjustDisplay = 0;
+				thisFrameRateAdjustDisplay = 0;
                         }
                 }
 	} 
@@ -122,6 +123,7 @@ void mousePressed() {
 
 			paused = !paused;
 			thisFrameRateAdjust = 0;
+			thisFrameRateAdjustDisplay = 0;
 		}
 	}
 }
