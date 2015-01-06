@@ -23,6 +23,10 @@ a.img {
 	border: none; 
 	}
 
+.badge { 
+	width: 100%;
+	}
+
 .icon {
 	height: 18px;
 	}
@@ -45,8 +49,8 @@ a.img {
 	}
 
 .imageContainer {
-	margin-left:-40px;
-	margin-top:-20px;
+	width: 50%;
+	padding-bottom: 20px;
 	position:relative; 
 	}
 
@@ -109,8 +113,9 @@ img {
 	}
 
 .imageContainer {
-	margin-left:0px;
-	margin-top:-20px;
+	width: 50%;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	position:relative; 
 	}
 }
