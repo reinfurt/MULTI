@@ -18,11 +18,11 @@ a {
 a:hover {
         border-bottom: solid 3px #FFF;
 	}
-
-a:active {
-        color:#FFF;
-	}
 	
+a.img { 
+	border: none; 
+	}
+
 .icon {
 	height: 18px;
 	}
