@@ -16,7 +16,11 @@ a {
 	}
 
 a:hover {
-        border-bottom: solid 3px #FFF;
+        border-bottom: solid 2px #FFF;
+	}
+
+a:active {
+	color:#FFF;
 	}
 	
 a.img { 
@@ -69,6 +73,18 @@ a.img {
 .grey {
 	color:#CCC;
 	}
+
+a.grey {
+	border-bottom: solid 2px #CCC;
+}
+
+a.grey:hover {
+	border-bottom: solid 2px #FFF;
+}
+
+a.grey:hover {
+	border-bottom: solid 2px #FFF;
+}
 
 
 /* mobile */
