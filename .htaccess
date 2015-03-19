@@ -1,1 +1,7 @@
-AddType text/cache-manifest .manifest
+AuthUserFile /Library/Webserver/Documents/MULTI/.htpasswd
+AuthName "Multi v2.0"
+AuthType Basic
+<Files download.html>
+Require valid-user
+</Files>
+
