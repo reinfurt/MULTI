@@ -1,13 +1,17 @@
 <?php
+
+	// plan 
+
+	// one .php file which either serves up a form or 
+	// processes that form by writing to a txt file, zipping, etc
+
 	// 0. add form to collect name and email
 
 
 	// 1. write Users.txt
 
 	$myfile = fopen("_Resources/_Processing/Users-dev.txt", "a") or die("Unable to open file!");
-	$txt = "John Doe\n";
-	fwrite($myfile, $txt);
-	$txt = "Jane Doe\n";
+	$txt = "John Doe <john.doe@doe.com>\n";
 	fwrite($myfile, $txt);
 	fclose($myfile);
 
@@ -16,30 +20,28 @@
 
 	// add files to an existing Multi.zip
 
-
     	$files = array('_Resources/_Processing/Users-dev.txt');
     
 
-// not working, maybe a path issue?
-// or perhaps permissions
-// alt method (simpler, but still not working)
-// just not writing to any zip file, so maybe method below is better
-// one of these *will* work however
-// should work out how to debug php
+// method 1
 
-// **** works from the command line but not within the browser... **** hmm
+// works from the command line, but not in browser
+// maybe a path issue? or perhaps permissions
 // might work on pair.com
+// very likely either <docroot> issue or permissions issue
 
 $zip = new ZipArchive;
 
 if ($zip->open('./_Resources/_Processing/Multi-dev.zip') === TRUE) {
-    $zip->addFile('/Library/WebServer/Documents/MULTI/_Resources/_Processing/Users.txt', 'Users-dev.txt');
+    $zip->addFile('/Library/WebServer/Documents/MULTI/_Resources/_Processing/Users-dev.txt', 'Users-dev.txt');
     $zip->close();
     echo 'ok';
 } else {
     echo 'failed';
 }
 
+
+	// method 2
 
 	/*
 	// 2.2 create new zip object
@@ -77,6 +79,7 @@ if ($zip->open('./_Resources/_Processing/Multi-dev.zip') === TRUE) {
 	// close zip
 	$zip->close();
     	*/
+
 
 /*
 	// 3. download
