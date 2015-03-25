@@ -27,6 +27,32 @@ a.img {
 	border: none; 
 	}
 
+input {
+	width:100%;
+	display: block;
+	border: 1px solid #000;
+	height: 25px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+	}
+
+
+#submit {
+	width:60px;
+	display: block;
+        height: 50px;
+        border: 1px solid #000;
+	background-color:#FFF;
+	margin-top:5px;
+	border-radius: 5px;
+	}
+
+#submit:hover {
+	background-color:#CCC;	
+        border: 1px solid #000;
+	}
+
 .badge { 
 	width: 100%;
 	}

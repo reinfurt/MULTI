@@ -14,6 +14,48 @@
 
 <body>
 
+<?php 
+if (!$user) {
+?>
+
+	<div class='blockContainer'>
+		Thank you very much for purchasing Multi. 
+	</div>
+
+	<div class='blockContainer'>
+		Please enter your full name and email address below. <span class='grey'>This data will be added to 
+Multi and you'll be taken to installation and downloading instructions.</span>
+		<br />
+		<br />
+		<form enctype='multipart/form-data' action='download.html' method='post'>
+		Name<br />
+		<input type="text" name="user">
+		<br />
+		Email<br />
+		<input type="text" name="email" class='Helvetica'>
+		<br />
+		<input id="submit" type='submit' name='submit' value='OK'>
+		</form>
+	</div>
+
+	<div class='blockContainer'>
+                <div class="grey">
+		</div>
+	</div>
+
+<?php 
+} else {
+      
+	// 1. write Users.txt
+
+        $addfilesource = '_Resources/_Processing/Users.txt';
+
+	$file = fopen($addfilesource, "a") or die("Unable to open file!");
+	fwrite($file, $user);
+	fwrite($file, " <" . $email . ">" . PHP_EOL);
+	fclose($file);
+?>
+
 	<div class='blockContainer'>
 		Multi comes in two versions, for iOS and OS X. 
 		<a href="more.html">More</a> user information?
@@ -50,7 +92,7 @@
 		<br/>
 		Available for Macintosh OS X, Multi is a standalone application.
 		From your laptop or desktop,		
-		<a href="_Resources/_Processing/Multi.zip">click here to download</a> . . .
+		<a href="zip.php">click here to download</a> . . .
 		<br/>
 		<br/>
                 <div class="grey">
@@ -62,6 +104,11 @@
 		Users.txt, with names and emails of all previous Multi buyers, is included in this download.
 		</div>
 	</div>
+
+<?php 
+}
+?>
+
 
 </body>
 </html>
