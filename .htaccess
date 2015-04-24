@@ -1,0 +1,7 @@
+AuthUserFile /usr/www/users/reinfurt/O-R-G/_Staging/MULTI/.htpasswd
+AuthName "Multi v2.0"
+AuthType Basic
+<Files download.html>
+Require valid-user
+</Files>
+
