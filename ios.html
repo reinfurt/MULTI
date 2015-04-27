@@ -1,39 +1,50 @@
+<?
+$isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
+if($isiPad)
+	$manifest = "tablet.manifest";
+else
+	$manifest = "cache.manifest";
+?>
 <!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 Transitional//EN" "http://www.w3.org/tr/xhtml1/Dtd/xhtml1-transitional.dtd">
-<html manifest="cache.manifest">
+<html manifest="<? echo $manifest; ?>">
 
 <head>
-        <title>Multi</title>
-        <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8" />
-        <meta http-equiv="Title" content="Multi" />
+    <title>Multi</title>
+   
+    <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8" />
+    <meta http-equiv="Title" content="Multi" />
 	<meta name="viewport" content="user-scalable=no, width=device-width">
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	
 	<link rel="apple-touch-icon" href="_Resources/apple-touch-icon.png" />
-        <link rel="stylesheet" type="text/css" media="all" href="_Resources/global.css" />
-        <script src="_Resources/_Processing/processing-1.3.6.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="_Resources/global.css" />
+    
+    <script src="_Resources/_Processing/processing-1.3.6.js"></script>
 	<script>
 		function BlockMove(event) {
-  
 			event.preventDefault();
 		}
 	</script>
 </head>
 
 <body ontouchmove="BlockMove(event);">
-
 	<div id='Multi'></div>
 
 	<script>
 
 		temp = document.getElementById('Multi');
 	
-  		if (!window.navigator.standalone) {
-
+  		if(!window.navigator.standalone)
+  		{
 			temp.innerHTML += '<div class="blockContainer">To install Multi on your iOS device *right now*, first click this icon <img src="_Resources/install.png" class="icon"> on the mobile Safari toolbar and then select <img src="_Resources/addtohome.png" class="icon"> “Add to Home Screen” from the menu . . . <br/><br/>Multi will download and the browser will exit. Launch Multi from the installed icon.</div>';
-
-		} else {
-
-			temp.innerHTML = '<canvas datasrc="_Resources/_Processing/Multi.pde"></canvas>';
+		}
+		else 
+		{
+			if(navigator.userAgent.match(/iPad/i) != null)
+				temp.innerHTML = '<canvas datasrc="_Resources/_Processing/Multi-ipad.pde"></canvas>';
+			else
+				temp.innerHTML = '<canvas datasrc="_Resources/_Processing/Multi.pde"></canvas>';
 		}
 
 	</script>
