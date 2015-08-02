@@ -1,6 +1,6 @@
 CACHE MANIFEST
 _Resources/apple-touch-icon.png
 _Resources/global.css
-_Resources/_Processing/processing-1.3.6.js
+_Resources/_Processing/processing.min.js
 _Resources/_Processing/Multi.pde
 ios.html
